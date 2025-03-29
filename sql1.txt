@@ -4,4 +4,4 @@ CREATE TABLE country (
 	primary key(id)
 ); 
 select * from country;
-
+INSERT 
