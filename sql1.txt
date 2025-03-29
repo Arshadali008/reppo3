@@ -4,21 +4,4 @@ CREATE TABLE country (
 	primary key(id)
 ); 
 select * from country;
-INSERT INTO country(ID,NAME)
-VALUES (101, 'England'),
-(102, 'Argentina'),
-(109, 'Portugal'),
-(124, 'Germany'),
-(135, 'Spain'),
-(136, 'Italy'),
-(149, 'Egypt'),
-(158, 'Brazil'),
-(202, 'France');
-
-select club.name, country.name from club join country on club.country_id = country.id where country.name = 'England';
-select players.name, club.name, coach.name, country.name from players join club on players.club_id = club.id join coach on players.country_id = coach.country_id join country on coach.country_id = country.id;
-select players.name, country.name from players join club on players.club_id = club.id join country on club.country_id = country.id where players.country_id = club.country_id;
-select coach.name, coach.age ,country.name from coach join club on coach.id = club.coach_id join country on club.country_id = country.id where coach.country_id != club.country_id and coach.age < 59 order by coach.age;
-create view top5scorers as select players.name PlayerName, country.name CountryName, players.age , players.goals, club.name ClubName, coach.name CoachName from players join club on players.club_id = club.id join coach on club.coach_id = coach.id join country on coach.country_id = country.id order by players.goals desc limit 5;
-select * from top5scorers;
-select  players.name, club.name from players right join club on players.club_id = club.id;
+INSERT 
